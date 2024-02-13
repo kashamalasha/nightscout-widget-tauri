@@ -1,6 +1,6 @@
 import { mainAPI } from "./ipc.js";
 import { formDataToObject } from "./util.js";
-const { appWindow } = window.__TAURI__.window;
+const { appWindow, PhysicalPosition } = window.__TAURI__.window;
 const { listen } = window.__TAURI__.event;
 const log = mainAPI.log;
 
@@ -31,12 +31,18 @@ FormButtons.CLOSE.addEventListener(`click`, () => {
   }
 });
 
+const adjustWindowPosition = async (payload) => {
+  const position = new PhysicalPosition(payload.position.x, payload.position.y);
+  const logicalPosition = position.toLogical(payload.scaleFactor);
+  const size = await appWindow.outerSize();
+  const logicalSize = size.toLogical(payload.scaleFactor);
+    appWindow.setPosition({ ...logicalPosition, x: logicalPosition.x - logicalSize.width });
+}
+
 await listen(`set_position`, async (evt) => {
   const visible = await appWindow.isVisible();
     if (visible) {
-      log.info(`Settings: Received position ${evt.position.x}, ${evt.position.y}`);
-      mainAPI.adjustWindowPosition(evt.windowLabel);
+      // mainAPI.adjustWindowPosition();
+      adjustWindowPosition(evt.payload);  
     }
-}); 
-// }
-// unlisten();
+});

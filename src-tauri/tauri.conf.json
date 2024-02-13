@@ -18,7 +18,8 @@
         "close": true,
         "hide": true,
         "setAlwaysOnTop": true,
-        "setDecorations": false
+        "setDecorations": false,
+        "setPosition": true
       },
       "shell": {
         "all": false,

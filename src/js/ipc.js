@@ -1,5 +1,5 @@
 const { invoke } = window.__TAURI__.tauri;
-const { appWindow, WebviewWindow } = window.__TAURI__.window;
+const { appWindow } = window.__TAURI__.window;
 
 export const mainAPI = {
     closeWindow: () => invoke(`close_window`, { appWindow }),
@@ -10,6 +10,9 @@ export const mainAPI = {
     },
     toggleSetting: () => invoke(`toggle_settings`),
     openSite: (siteAlias) => invoke(`open_site`, { siteAlias }),
-    adjustWindowPosition: (parentWindowLabel) => invoke(`adjust_child_position`, 
-        { parentWindowLabel, childWindowLabel: appWindow.label }),
+    adjustWindowPosition: () => {
+        invoke(`adjust_child_position`, 
+            { parentWindowLabel: `widget`, childWindowLabel: `settings` }
+        );
+    },
 }

@@ -35,6 +35,6 @@ Buttons.browse.addEventListener(`pointerup`, () => {
 });
 
 appWindow.onMoved(async ({ payload: position }) => {
-  await emit(`set_position`, { position });
-  log.info(`Widget: Window moved to ${position.x}, ${position.y}`);
+  const scaleFactor = await appWindow.scaleFactor();
+  await emit(`set_position`, { position, scaleFactor });
 });
