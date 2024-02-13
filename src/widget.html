@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <title>Owlet</title>
+  </head>
+  <body>
+    <main>
+      <section data-tauri-drag-region class="sgv">
+        <div data-tauri-drag-region class="sgv__last sgv--flicker">?.?</div>
+        <div data-tauri-drag-region class="sgv__delta sgv--flicker">?.?</div>
+        <div data-tauri-drag-region class="sgv__trend sgv--flicker">?</div>
+        <div data-tauri-drag-region class="sgv__age sgv--flicker"><span class="cgv__age-value">?</span> min.</div>
+      </section>
+      <section class="widget-control">
+        <button class="widget-button widget-button__close" id="button-close">
+          <img src="assets/icons8-close.png" alt="close" width="12px" height="12px">
+        </button>
+        <button class="widget-button" id="button-browse">
+          <img src="assets/icons8-polyline.png" alt="browse" width="12px" height="12px">
+        </button>
+        <button class="widget-button widget-button__settings" id="button-settings">
+          <img src="assets/icons8-settings.png" alt="setup" width="12px" height="12px">
+        </button>
+      </section>
+    </main>
+    <script type="module" src="js/widget.js"></script>
+  </body>
+</html>

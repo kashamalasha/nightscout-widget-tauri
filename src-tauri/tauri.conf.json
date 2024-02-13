@@ -1,0 +1,70 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "nightscout-widget",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "startDragging": true,
+        "close": true,
+        "hide": true,
+        "setAlwaysOnTop": true,
+        "setDecorations": false
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.burny.owlet.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "widget",
+        "url": "widget.html",
+        "width": 180,
+        "height": 80,
+        "fullscreen": false,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true
+      },
+      {
+        "label": "settings",
+        "url": "settings.html",
+        "width": 800,
+        "height": 530,
+        "fullscreen": false,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "visible": false
+      }
+    ]
+  }
+}
