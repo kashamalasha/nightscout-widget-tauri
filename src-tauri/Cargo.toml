@@ -1,11 +1,11 @@
 [package]
-name = "nightscout-widget"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
-edition = "2021"
+name = "Owlet"
+version = "1.0.0-alpha"
+description = "A widget application to show on a desktop blood glucose value is getting from Nightscout API. Clone of the nightscout-widget-electron based on the Tauri platform." 
+authors = ["Dmitry Burnyshev"]
+license = "GPL-3.0"
+repository = "https://github.com/kashamalasha/nightscout-widget-tauri"
+edition = "2023"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
